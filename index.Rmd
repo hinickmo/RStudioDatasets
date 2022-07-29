@@ -8,6 +8,7 @@ output:
     highlight: github
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -21,6 +22,9 @@ library(datasets)
 library(tidyverse)
 library(ggthemes)
 library(tinytex)
+library(prettydoc) 
+windowsFonts(Times = windowsFont("Times New Roman"))
+library(ggthemes)
 ```
 
 
