@@ -33,29 +33,29 @@ head(iris)
 
 
 #basic scatterplot
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 qplot(Petal.Width, Petal.Length, data=iris)
 ```
 
 #basic scatterplot w/ species colored
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 qplot(Petal.Width, Petal.Length, color=Species, data=iris)
 ```
 
 #same thing as above, but strictly ggplot2
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Width, Petal.Length, color=Species))+
       geom_point()
 ```
 
 #size matches sepal length. jitter separates dots slightly for viewing. alpha makes dots more transparent
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Sepal.Length))+
   geom_jitter(alpha=0.5)
 ```
 
 #size matches sepal length. jitter separates dots slightly for viewing. alpha makes dots more transparent. geom_smooth makes regression line with std. error
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Sepal.Length))+
   geom_point(size=2)+
   geom_smooth(method=lm)+
@@ -63,7 +63,7 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Sepal.Length))+
 ```
 
 #histogram
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Length, fill=Species))+
   geom_histogram()+
   theme(legend.position = "right")
@@ -99,7 +99,7 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Sepal.Length))+
 windowsFonts(Times = windowsFont("Times New Roman"))
 library(ggthemes)
 
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color=Species, size=Sepal.Length))+
   geom_point(size=2)+
   geom_smooth(method=lm)+
@@ -112,7 +112,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color=Species, size=Sepal.Length))+
 ```
 
 #SEPAL WIDTH VS. SEPAL LENGTH w/out theme
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color=Species, size=Sepal.Length))+
   geom_point(size=2)+
   geom_smooth(method=lm)+
@@ -126,7 +126,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color=Species, size=Sepal.Length))+
 ```
 
 #SEPAL WIDTH VS. SEPAL LENGTH w/ theme
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Sepal.Width, Sepal.Length, color=Species, size=Sepal.Length))+
   geom_point(size=2)+ 
   geom_smooth(method=lm)+
@@ -142,7 +142,7 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color=Species, size=Sepal.Length))+
 
 
 #PETAL WIDTH VS. PETAL LENGTH w/out theme
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
   geom_point(size=2)+
   geom_smooth(method=lm)+
@@ -156,7 +156,7 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
 ```
 
 #PETAL WIDTH VS. PETAL LENGTH w/ theme & facet
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
   geom_point(size=2)+
   geom_smooth(method=lm)+
@@ -171,7 +171,7 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
 ```
 
 #PETAL WIDTH VS. PETAL LENGTH w/ theme
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
   geom_point(size=2)+ 
   geom_smooth(method=lm)+
@@ -186,7 +186,7 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
 
 
 #PETAL WIDTH VS. PETAL LENGTH w/ theme & facet
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
   geom_point(size=2)+ 
   geom_smooth(method=lm)+
@@ -202,7 +202,7 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Petal.Length))+
 
 
 #Boxplot NO ggplot2 Sepal Length
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 boxplot(Sepal.Length~Species,
         data=iris, 
         main='Sepal Length by Species',
@@ -215,7 +215,7 @@ boxplot(Sepal.Length~Species,
 
 
 #Boxplot w/ ggplot2 Sepal Length
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) + 
   geom_boxplot(width=0.5,lwd=1)+
   labs(title="Sepal Length by Species", x = "Species", y = "Sepal Length (cm)",  
@@ -224,7 +224,7 @@ ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +
 
 
 #Boxplot w/ ggplot2 Sepal Width
-```{r message=FALSE, paged.print=FALSE}
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
 ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) + 
   geom_boxplot(width=0.5,lwd=1)+
   labs(title="Sepal Length by Species", x = "Species", y = "Sepal Width (cm)",  
@@ -233,7 +233,7 @@ ggplot(iris, aes(x=Species, y=Sepal.Width, fill=Species)) +
 ```
 
 #Boxplot w/ ggplot2 Petal Length
-```{r message=FALSE, paged.print=FALSE}
+```{r message=FALSE, warning=FALSE, paged.print=FALSE}
 ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species)) + 
   geom_boxplot(width=0.5,lwd=1)+
   labs(title="Sepal Length by Species", x = "Species", y = "Petal Length (cm)",  
