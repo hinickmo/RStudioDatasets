@@ -3,8 +3,9 @@ title: "IrisData"
 author: "Nicholas Moore"
 date: "2022-07-29"
 output:
-  html_document: default
-  pdf_document: default
+  prettydoc::html_pretty:
+    theme: HPSTR
+    highlight: github
 ---
 
 ```{r setup, include=FALSE}
