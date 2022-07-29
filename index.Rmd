@@ -1,5 +1,5 @@
 ---
-title: "IrisData"
+title: "Iris Data Overview"
 author: "Nicholas Moore"
 date: "2022-07-29"
 output:
@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**Background** Creating standard plots with RStudio's built-in datasets. 
+**Background:** Creating standard plots with RStudio's built-in datasets. 
 
 ### Loading Data / Basic Plotting Tutorial
 ```{r message=FALSE, warning=FALSE}
