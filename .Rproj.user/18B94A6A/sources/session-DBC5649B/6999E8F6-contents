@@ -1,22 +1,21 @@
 ---
-title: "Iris Data Overview"
+title: "RStudio Datasets"
 author: "Nicholas Moore"
 date: "2022-07-29"
-output:
-  prettydoc::html_pretty:
-    theme: HPSTR
-    highlight: github
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# {.tabset}
+## {.tabset} 
 
 **Background:** Creating standard plots with RStudio's built-in datasets. 
 
-### Loading Data / Basic Plotting Tutorial
+### Iris Data Overview
+
+## Loading Data / Basic Plotting Tutorial
 ```{r message=FALSE, warning=FALSE}
 library(ggplot2) #qplot (basic scatterplot) 
 library(datasets)

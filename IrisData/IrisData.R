@@ -187,6 +187,8 @@ ggplot(iris, aes(x=Species, y=Petal.Width, fill=Species)) +
 install.packages("rmarkdown")
 tinytex::install_tinytex()
 
+## {.tabset} #this goes in rmarkdown file, it will not work with prettydocs.
+
 #github connection "Tool" -> "Shell"
 git config --global user.email "ncsu.nickmo@gmail.com"
 git config --global user.name "Nick"
