@@ -12,6 +12,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# {.tabset}
+
 **Background:** Creating standard plots with RStudio's built-in datasets. 
 
 ### Loading Data / Basic Plotting Tutorial

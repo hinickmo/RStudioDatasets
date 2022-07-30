@@ -3,7 +3,7 @@
     "path": "C:/Users/Siggi/Downloads/RStudioDatasets/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "2914050955",
     "contents": "",
     "dirty": false,
     "created": 1659150822955.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "6,16",
+        "cursorPosition": "14,1",
         "scrollLine": "0",
         "last_setup_crc32": ""
     },
     "folds": "",
-    "lastKnownWriteTime": 1659150892,
+    "lastKnownWriteTime": 1659194044,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1659150892587,
+    "last_content_update": 1659194044853,
     "read_only": false,
     "read_only_alternatives": []
 }

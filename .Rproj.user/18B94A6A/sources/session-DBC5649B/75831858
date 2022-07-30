@@ -1,0 +1,26 @@
+{
+    "id": "75831858",
+    "path": "C:/Users/Siggi/Downloads/RStudioDatasets/AirPassengers/AirPassengers.R",
+    "project_path": "AirPassengers/AirPassengers.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1659151482204.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "24,0",
+        "scrollLine": "6"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1659155456,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1659155488444,
+    "read_only": false,
+    "read_only_alternatives": []
+}
