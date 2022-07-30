@@ -194,5 +194,7 @@ git config --global user.email "ncsu.nickmo@gmail.com"
 git config --global user.name "Nick"
 
 #next copy link github url webpage and File > New Project.., select Version Control, Choose Git, then provide the repository HTTPS link
-#copy link from gitbuh pages and paste onto "About" section from main github page on right side
-#often need to clear knit cachem, resave rmd and index for website update to work
+#copy link from gitbub pages and paste onto "About" section from main github page on right side
+#often need to clear knit cache, re-save rmd and index for website update to work
+#REFRESH WEBSITE PAGE
+
