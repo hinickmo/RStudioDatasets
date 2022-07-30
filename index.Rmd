@@ -3,8 +3,8 @@ title: "RStudio Datasets"
 author: "Nicholas Moore"
 date: "2022-07-29"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -14,9 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## {.tabset} 
 
-**Background:** Creating standard plots with RStudio's built-in datasets. 
+**Background:** Creating a variety of story-telling plots with RStudio's built-in datasets. 
 
-### Iris Data Overview
+### Iris Data 
 
 ## Loading Data / Basic Plotting Tutorial
 ```{r message=FALSE, warning=FALSE}
