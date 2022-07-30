@@ -12,13 +12,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## {.tabset} 
+## {.tabset .tabset-fade} 
 
 **Background:** Creating a variety of story-telling plots with RStudio's built-in datasets. 
 
 ### Iris Data 
 
-## Loading Data / Basic Plotting Tutorial
+
+
+**Loading Data / Basic Plotting Tutorial**
 ```{r message=FALSE, warning=FALSE}
 library(ggplot2) #qplot (basic scatterplot) 
 library(datasets)
@@ -37,7 +39,6 @@ library(help = "datasets")
 
 iris
 head(iris)
-
 
 #basic scatterplot
 ```{r message=FALSE, warning=FALSE}
@@ -101,7 +102,7 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Sepal.Length))+
   theme(legend.position = "right")
 ```
   
-# Key Figures
+#Key Figures
 
 windowsFonts(Times = windowsFont("Times New Roman"))
 library(ggthemes)
@@ -256,4 +257,93 @@ ggplot(iris, aes(x=Species, y=Petal.Width, fill=Species)) +
        caption="Data were collected by Anderson, Edgar (1935).")
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### AirPassengers Data
+
+**Loading Data / Basic Plotting Tutorial**
+```{r message=FALSE, warning=FALSE}
+library(ggplot2) #qplot (basic scatterplot) 
+library(ggthemes)
+library(tidyverse)
+library(datasets)
+library(ggfortify)
+library(forecast) #for autoplot with geom_smooth linear regression
+library(tseries) #for autoplot with geom_smooth linear regression
+```
+
+?datasets
+library(help = "datasets")
+?AirPassengers
+
+AirPassengers
+head(AirPassengers)
+
+#this dataset does not have column names, but that won't stop us
+
+class(AirPassengers) #ts is the output = this means the data is a time series 
+start(AirPassengers) #shows first year 
+end(AirPassengers) #shows last year
+
+
+```{r message=FALSE, warning=FALSE}
+plot(AirPassengers, xlab="Year", ylab="Air Passengers (1,000s)", main="Time Series of Air Passengers", 
+     sub="The classic Box & Jenkins airline data. Monthly totals of international airline passengers, 1949 to 1960.")
+```
+
+
+```{r message=FALSE, warning=FALSE}
+boxplot(AirPassengers~cycle(AirPassengers),xlab="Date", ylab = "Air Passengers (1,000s)" ,main ="Monthly Air Passengers Boxplot from 1949 to 1961")
+```
+
+
+```{r message=FALSE, warning=FALSE}
+autoplot(AirPassengers) + 
+  geom_smooth(method="lm")+ 
+  labs(x ="Date", y = "Air Passengers (1,000s)", title="Air Passengers from 1949 to 1961") 
+```
+  
+
+```{r message=FALSE, warning=FALSE}
+arimaAirPassengers <- auto.arima(AirPassengers)
+arimaAirPassengers
+```
+
+
+```{r message=FALSE, warning=FALSE}
+ggtsdiag(arimaAirPassengers)
+```
+
+
+```{r message=FALSE, warning=FALSE}
+forecastAirPassengers <- forecast(arimaAirPassengers, level = c(95), h = 48)
+autoplot(forecastAirPassengers)
+```
 
