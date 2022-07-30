@@ -1,0 +1,8 @@
+"0","library(ggplot2) #qplot (basic scatterplot) "
+"0","library(datasets)"
+"0","library(tidyverse)"
+"0","library(ggthemes)"
+"0","library(tinytex)"
+"0","library(prettydoc) "
+"0","windowsFonts(Times = windowsFont(""Times New Roman""))"
+"0","library(ggthemes)"
