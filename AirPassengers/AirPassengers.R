@@ -27,11 +27,13 @@ autoplot(AirPassengers) +
   geom_smooth(method="lm")+ 
   labs(x ="Date", y = "Air Passengers (1,000s)", title="Air Passengers from 1949 to 1961") 
   
-
+#ARIMA is an acronym for “autoregressive integrated moving average.” It's a model used in statistics and econometrics to measure events that happen over a period of time.
 arimaAirPassengers <- auto.arima(AirPassengers)
 arimaAirPassengers
 
+#if the residuals plot is around - w/ no movement, then ARIMA model is a good fit
 ggtsdiag(arimaAirPassengers)
 
+#95% confidence looking 48 months into the future
 forecastAirPassengers <- forecast(arimaAirPassengers, level = c(95), h = 48)
 autoplot(forecastAirPassengers)
