@@ -440,3 +440,75 @@ forecastedJsales <- forecast(arimaBJsales, 10)
 plot(forecastedJsales, main="Forecast of Sales Over Time", col.main="SteelBlue", ylab = "Sales (unknown scale)", xlab="Date (unknown scale)")
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### BOD  
+
+
+
+**Loading Data / Basic Plotting Tutorial**
+```{r message=FALSE, warning=FALSE}
+library(ggplot2) #qplot (basic scatterplot) 
+library(ggthemes)
+library(tidyverse)
+library(datasets)
+library(ggfortify)
+```
+
+?datasets
+library(help = "datasets")
+?BOD
+
+BOD
+head(BOD)
+
+class(BOD) #data frame
+
+#same thing as basic ggplot
+```{r message=FALSE, warning=FALSE}
+qplot(Time, demand, data=BOD)
+```
+
+```{r message=FALSE, warning=FALSE}
+ggplot(BOD, aes(Time, demand))+
+  geom_point()
+```
+
+
+```{r message=FALSE, warning=FALSE}
+ggplot(BOD, aes(Time, demand))+
+  geom_line()+
+  expand_limits(y=0, x=0)+
+  labs(title="Biochemical Oxygen Demand Versus Time", x = "Time (days)", y = "Biochemical Oxygen Demand (mg/l)",  
+       caption="Bates, D.M. and Watts, D.G. (1988), Nonlinear Regression Analysis and Its Applications, Wiley, Appendix A1.4.")+
+  theme(plot.title = element_text(color = "SteelBlue"))
+
+```
+
+

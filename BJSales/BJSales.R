@@ -12,6 +12,7 @@ library(help = "datasets")
 BJsales
 head(BJsales)
 
+
 class(BJsales) #ts is the output = this means the data is a time series 
 start(BJsales) #shows first year 
 end(BJsales) #shows last year

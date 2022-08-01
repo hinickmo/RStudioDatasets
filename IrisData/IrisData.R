@@ -6,6 +6,7 @@ library(datasets)
 library(help = "datasets")
 ?iris
 
+class(iris)
 iris
 head(iris)
 
