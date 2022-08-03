@@ -22,9 +22,9 @@ qplot(uptake, conc, data=CO2, fill=Type)
 ggplot(CO2, aes(x=Treatment, y=uptake)) + 
   geom_boxplot()
 
-
-
 t.test(CO2$uptake ~ CO2$Treatment)
+
+
 
 ggplot(CO2, aes(x=Type, y=uptake)) + 
   geom_boxplot()
@@ -32,13 +32,13 @@ ggplot(CO2, aes(x=Type, y=uptake)) +
 t.test(CO2$uptake ~ CO2$Type)
 
 
-
-par(mfrow = c(1,2))
+# set the plotting area into a 1*2 array
+par(mfrow = c(1,2)) 
 boxplot(CO2$uptake ~ CO2$Treatment)
 boxplot(CO2$uptake ~ CO2$Type)
 
 
-
+# set the plotting area into a 1*1 array
 par(mfrow = c(1,1))
 boxplot(CO2$uptake ~ CO2$Type + CO2$Treatment)
 
@@ -56,18 +56,14 @@ boxplot(subset(CO2$uptake, CO2$conc == 95),
 
 
 par(mfrow = c(2,2))
-plot(uptake ~ conc, data = subset(CO2, 
-                                  Type == "Quebec" & Treatment == "chilled"), 
-     main="Chilled Quebec")
-plot(uptake ~ conc, data = subset(CO2,
-                                  Type == "Mississippi" & Treatment == "chilled"), 
-     main="Chilled Mississippi")
-plot(uptake ~ conc, data = subset(CO2, 
-                                  Type == "Quebec" & Treatment == "nonchilled"),
-     main="Nonchilled Quebec")
-plot(uptake ~ conc, data = subset(CO2, 
-                                  Type == "Mississippi" & Treatment == "nonchilled"), 
-     main="Nonchilled Mississippi")
+plot(uptake ~ conc, data = subset(CO2,Type == "Quebec" & Treatment == "chilled"), 
+     main="Chilled Quebec", xlab = "Concentration (ML/L)", ylab = "Carbon Dioxide Uptake (μmol/m2s)" )
+plot(uptake ~ conc, data = subset(CO2,Type == "Mississippi" & Treatment == "chilled"), 
+     main="Chilled Mississippi", xlab = "Concentration (ML/L)", ylab = "Carbon Dioxide Uptake (μmol/m2s)")
+plot(uptake ~ conc, data = subset(CO2,Type == "Quebec" & Treatment == "nonchilled"),
+     main="Nonchilled Quebec", xlab = "Concentration (ML/L)", ylab = "Carbon Dioxide Uptake (μmol/m2s)")
+plot(uptake ~ conc, data = subset(CO2,Type == "Mississippi" & Treatment == "nonchilled"), 
+     main="Nonchilled Mississippi", xlab = "Concentration (ML/L)", ylab = "Carbon Dioxide Uptake (μmol/m2s)")
 
 
 
