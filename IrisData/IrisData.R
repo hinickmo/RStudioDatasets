@@ -31,7 +31,9 @@ ggplot(iris, aes(Petal.Width, Petal.Length, color=Species, size=Sepal.Length))+
   theme(legend.position = "right")
 
 #histogram
-ggplot(iris, aes(Petal.Length, fill=Species))+
+ggplot(iris, aes(Petal.Length, fill=Spec
+  ylim(0.0, 10.0)+
+  theme(legend.position = "bottom")ies))+
   geom_histogram()+
   theme(legend.position = "right")
 
@@ -92,8 +94,6 @@ ggplot(iris, aes(Sepal.Width, Sepal.Length, color=Species, size=Sepal.Length))+
        caption="Data were collected by Anderson, Edgar (1935).")+
   theme(axis.title = element_text()) + ylab('Sepal Length (cm)') + xlab('Sepal Width (cm)')+
   xlim(2.0, 4.5)+
-  ylim(0.0, 10.0)+
-  theme(legend.position = "bottom")
 
 
 

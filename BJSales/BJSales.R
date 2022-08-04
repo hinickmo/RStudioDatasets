@@ -33,7 +33,7 @@ arimaBJsales
 #if the residuals plot is around - w/ no movement, then ARIMA model is a good fit
 ggtsdiag(arimaBJsales)
 
-#95% confidence looking 48 months into the future
+#95% confidence looking 10 months into the future
 forecastBJsales <- forecast(arimaBJsales, level = c(95), h = 10)
 autoplot(forecastBJsales)
 

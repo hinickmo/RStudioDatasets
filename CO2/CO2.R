@@ -3,6 +3,7 @@ library(ggthemes)
 library(tidyverse)
 library(datasets)
 library(ggfortify)
+library(rmarkdown)
 
 ?datasets
 library(help = "datasets")
