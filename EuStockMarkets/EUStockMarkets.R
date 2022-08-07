@@ -4,8 +4,8 @@ library(tidyverse)
 library(datasets)
 library(ggfortify)
 library(rmarkdown)
-    library(broom)
-    library(dplyr)
+library(broom)
+library(dplyr)
 
 ?datasets
 library(help = "datasets")
