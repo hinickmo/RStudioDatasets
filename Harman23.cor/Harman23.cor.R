@@ -4,6 +4,7 @@ library(tidyverse)
 library(datasets)
 library(ggfortify)
 library(rmarkdown)
+library(ggcorrplot)
 
 ?datasets
 library(help = "datasets")
@@ -14,6 +15,11 @@ library(help = "datasets")
 Harman23.cor
 head(Harman23.cor)
 
+#exporting file to csv so I can manipulate it to work more easily with corrplot
+getwd()
+write.csv(Harman23.cor,"C:/Users/Siggi/Downloads/Harman23.cor.csv", row.names = FALSE)
+
+#this is already correlated data!
 class(Harman23.cor) #list
 
 Harman23DF <- as.data.frame(Harman23.cor,  col.names = c("", "", ""))#dataframe now

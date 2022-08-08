@@ -1238,6 +1238,9 @@ head(Harman23.cor)
 class(Harman23.cor) #list
 ```
 
+Exporting file to csv so I can manipulate it to work more easily with corrplot
+getwd()
+write.csv(Harman23.cor,"C:/Users/Siggi/Downloads/Harman23.cor.csv", row.names = FALSE)
 
 ```{r}
 Harman23DF <- as.data.frame(Harman23.cor,  col.names = c("", "", ""))#dataframe now
@@ -1290,4 +1293,108 @@ corrplot(as.matrix(Harman23DF), is.corr = TRUE, method = "square", diag = FALSE,
  
 
 Main problem was reformatting original dataset to work with the corrplot function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### mtcars
+
+
+
+**Loading Data / Basic Plotting Tutorial**
+
+```{r}
+library(ggplot2) #qplot (basic scatterplot) 
+library(ggthemes)
+library(tidyverse)
+library(datasets)
+library(ggfortify)
+library(rmarkdown)
+library(ggcorrplot)
+```
+
+
+?datasets
+library(help = "datasets")
+?mtcars
+
+The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel 
+consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
+
+mtcars
+head(mtcars)
+
+Only would do this if I want to export file to csv so I can manipulate it to work more easily with corrplot / renaming
+getwd()
+write.csv(mtcars,"C:/Users/Siggi/Downloads/mtcars.csv", row.names = FALSE)
+
+renaming columns 
+```{r}
+mtcarsnew <- rename(mtcars, "# Gears" = gear, "# Carburetors" = carb, Transmission = am, 
+                    Engine = vs, "1/4 Mile Time" = qsec, Weight = wt, "Rear Axle Ratio" = drat, 
+                    Horsepower = hp, Displacement = disp, "# Cylinders" = cyl, MPG = mpg)
+```
+
+mtcarsnew
+
+```{r}
+class(mtcarsnew) #data frame
+mtcarsCOR = cor(mtcarsnew)
+mtcarsCOR
+```
+
+
+```{r}
+ggcorrplot(mtcarsCOR, hc.order = TRUE, outline.col = "white")
+
+```
+
+```{r}
+corrplot(mtcarsCOR, is.corr = TRUE, method = "square", diag = FALSE, order = 'AOE', addCoef.col = "gray")
+```
+
+
+```{r}
+testmtcarsCOR = cor.mtest(mtcarsCOR, conf.level = 0.95)
+testmtcarsCOR
+```
+
+```{r}
+corrplot(mtcarsCOR, is.corr = TRUE, method = "square", diag = FALSE, order = 'AOE', addCoef.col = "gray", p.mat = testmtcarsCOR$p, sig.level = 0.05)
+```
 
