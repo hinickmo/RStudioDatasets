@@ -63,3 +63,16 @@ anova(ANOVAspraysSQRT)
 
 plot(ANOVAspraysSQRT)
 
+
+
+
+t.test(InsectSprays$count[InsectSprays$spray == 'A'], InsectSprays$count[InsectSprays$spray == 'B']) #not significant
+t.test(InsectSprays$count[InsectSprays$spray == 'A'], InsectSprays$count[InsectSprays$spray == 'C']) #significant
+t.test(InsectSprays$count[InsectSprays$spray == 'A'], InsectSprays$count[InsectSprays$spray == 'D']) #significant
+t.test(InsectSprays$count[InsectSprays$spray == 'A'], InsectSprays$count[InsectSprays$spray == 'E']) #significant
+t.test(InsectSprays$count[InsectSprays$spray == 'A'], InsectSprays$count[InsectSprays$spray == 'F']) #not significant
+
+
+
+
+
