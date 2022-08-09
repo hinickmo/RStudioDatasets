@@ -24,8 +24,8 @@ class(InsectSprays) #data frame
 
 
 #Either method for boxplot 1.)
-ggplot(InsectSprays, aes(x=spray, y=count))
-  +geom_boxplot()
+ggplot(InsectSprays, aes(x=spray, y=count))+
+  geom_boxplot()
 
 #2.)
 boxplot(count ~ spray, data = InsectSprays,

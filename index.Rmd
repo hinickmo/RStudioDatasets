@@ -1496,3 +1496,131 @@ plot_ly(data = Indometh, x=~time, y=~conc, type = 'scatter', mode = 'lines', col
          annotations = list(x = 1.0, y = -0.1, showarrow = F, xref='paper', yref='paper', 
          xanchor='right', yanchor='auto', xshift=0, yshift=0, text = "The Indometh data frame has 66 rows and 3 columns of             data on the pharmacokinetics of indometacin"))
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### InsectSprays
+
+
+
+**Loading Data / Basic Plotting Tutorial**
+
+```{r}
+library(ggplot2) #qplot (basic scatterplot) 
+library(ggthemes)
+library(tidyverse)
+library(datasets)
+library(ggfortify)
+library(rmarkdown)
+library(ggcorrplot)
+```
+
+?datasets
+library(help = "datasets")
+?InsectSprays
+
+The counts of insects in agricultural experimental units treated with different insecticides.
+
+InsectSprays
+head(InsectSprays)
+
+If I want to view raw csv
+write.csv(InsectSprays,"C:/Users/Siggi/Downloads/InsectSprays.csv", row.names = FALSE)
+
+class(InsectSprays) #data frame
+
+
+
+
+```{r}
+#Either method for boxplot 1.)
+ggplot(InsectSprays, aes(x=spray, y=count))+
+  geom_boxplot()
+```
+
+```{r}
+#2.)
+boxplot(count ~ spray, data = InsectSprays,
+        xlab = "Type of spray", ylab = "Insect count",
+        main = "InsectSprays data", varwidth = TRUE, col = "lightgray")
+```
+
+  
+```{r}
+ANOVAsprays <- aov(count ~ spray, data = InsectSprays)
+```
+
+```{r}
+summary(ANOVAsprays) #Reject null hypothesis. P-value less than 0.05. There is a sig difference.
+anova(ANOVAsprays) #same thing as using summary
+```
+
+```{r}
+pairwise.t.test(x=InsectSprays$count, g=InsectSprays$spray, p.adj="bonf")
+```
+
+```{r}
+plot(ANOVAsprays)
+```
+
+
+
+
+
+
+
+```{r}
+#Using SQRT to satisfy ANOVA conditions and ensure results are more accurate
+ggplot(InsectSprays, aes(x = spray, y = sqrt(count))) + 
+  geom_boxplot()
+```
+
+```{r}
+boxplot(sqrt(count) ~ spray, data = InsectSprays,
+        xlab = "Type of spray", ylab = "Insect count",
+        main = "InsectSprays data", varwidth = TRUE, col = "lightgray")
+```
+
+
+```{r}
+ANOVAspraysSQRT <- aov(sqrt(count) ~ spray, data = InsectSprays)
+```
+
+```{r}
+summary(ANOVAspraysSQRT)
+anova(ANOVAspraysSQRT)
+```
+
+```{r}
+plot(ANOVAspraysSQRT)
+```
