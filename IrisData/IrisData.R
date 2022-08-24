@@ -6,6 +6,8 @@ library(datasets)
 library(help = "datasets")
 ?iris
 
+getwd() 
+
 class(iris)
 iris
 head(iris)
